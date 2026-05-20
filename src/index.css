@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ─── Dark theme (default) ─── */
+:root {
+  color-scheme: dark;
+
+  --c-bg:              #07101e;
+  --c-surface:         #0d1b2e;
+  --c-card:            #0f1e2d;
+  --c-border:          rgba(255,255,255,0.08);
+  --c-text:            #f1f5f9;
+  --c-text-2:          rgba(255,255,255,0.55);
+  --c-text-3:          rgba(255,255,255,0.28);
+  --c-header:          rgba(7,16,30,0.9);
+  --c-glass:           rgba(255,255,255,0.05);
+  --c-glass-hover:     rgba(255,255,255,0.09);
+  --c-input:           rgba(255,255,255,0.06);
+  --c-input-border:    rgba(255,255,255,0.08);
+  --c-input-focus:     rgba(124,58,237,0.5);
+  --c-tab-pool:        rgba(255,255,255,0.05);
+  --c-tab-off:         rgba(255,255,255,0.38);
+  --c-genre-bg:        rgba(124,58,237,0.12);
+  --c-genre-border:    rgba(124,58,237,0.25);
+  --c-genre-text:      #a78bfa;
+  --c-close-bg:        rgba(255,255,255,0.08);
+  --c-close-text:      rgba(255,255,255,0.5);
+  --c-filter-off:      rgba(255,255,255,0.05);
+  --c-filter-off-text: rgba(255,255,255,0.38);
+  --c-count-bg:        rgba(248,113,113,0.15);
+  --c-count-text:      #f87171;
+  --c-skel-1:          rgba(255,255,255,0.03);
+  --c-skel-2:          rgba(255,255,255,0.07);
+  --c-overlay:         rgba(0,0,0,0.8);
+  --c-modal-shadow:    0 24px 64px rgba(0,0,0,0.7);
+  --c-err-icon:        rgba(248,113,113,0.6);
+  --c-empty-icon:      rgba(255,255,255,0.15);
+  --c-muted:           rgba(255,255,255,0.3);
+  --c-section-text:    rgba(255,255,255,0.7);
+  --c-ctr-text:        rgba(255,255,255,0.25);
+  --c-search-x:        rgba(255,255,255,0.35);
+  --c-spinner:         rgba(124,58,237,0.6);
+}
+
+/* ─── Light theme ─── */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --c-bg:              #eef2f7;
+  --c-surface:         #ffffff;
+  --c-card:            #dce7f3;
+  --c-border:          rgba(0,0,0,0.09);
+  --c-text:            #0f172a;
+  --c-text-2:          rgba(15,23,42,0.6);
+  --c-text-3:          rgba(15,23,42,0.38);
+  --c-header:          rgba(238,242,247,0.92);
+  --c-glass:           rgba(0,0,0,0.05);
+  --c-glass-hover:     rgba(0,0,0,0.09);
+  --c-input:           rgba(0,0,0,0.05);
+  --c-input-border:    rgba(0,0,0,0.12);
+  --c-input-focus:     rgba(124,58,237,0.4);
+  --c-tab-pool:        rgba(0,0,0,0.06);
+  --c-tab-off:         rgba(15,23,42,0.38);
+  --c-genre-bg:        rgba(124,58,237,0.08);
+  --c-genre-border:    rgba(124,58,237,0.2);
+  --c-genre-text:      #6d28d9;
+  --c-close-bg:        rgba(0,0,0,0.07);
+  --c-close-text:      rgba(15,23,42,0.5);
+  --c-filter-off:      rgba(0,0,0,0.06);
+  --c-filter-off-text: rgba(15,23,42,0.4);
+  --c-count-bg:        rgba(220,38,38,0.1);
+  --c-count-text:      #dc2626;
+  --c-skel-1:          rgba(0,0,0,0.04);
+  --c-skel-2:          rgba(0,0,0,0.09);
+  --c-overlay:         rgba(0,0,0,0.55);
+  --c-modal-shadow:    0 24px 64px rgba(0,0,0,0.22);
+  --c-err-icon:        rgba(220,38,38,0.6);
+  --c-empty-icon:      rgba(0,0,0,0.15);
+  --c-muted:           rgba(15,23,42,0.3);
+  --c-section-text:    rgba(15,23,42,0.7);
+  --c-ctr-text:        rgba(15,23,42,0.25);
+  --c-search-x:        rgba(15,23,42,0.35);
+  --c-spinner:         rgba(124,58,237,0.7);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: system-ui, 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--c-border);
+  border-radius: 10px;
+}
+
+/* ─── Skeleton shimmer ─── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--c-skel-1) 25%,
+    var(--c-skel-2) 50%,
+    var(--c-skel-1) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ─── Fade-in entry ─── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.28s ease-out;
+}
+
+/* ─── Heart nav button animation ─── */
+.heart-nav-btn {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.2s ease,
+              color 0.2s ease !important;
+}
+
+.heart-nav-btn:hover {
+  transform: scale(1.18) !important;
+}
+
+.heart-nav-btn:active {
+  transform: scale(0.88) !important;
+}
+
+/* ─── Theme toggle button ─── */
+.theme-toggle {
+  transition: transform 0.3s ease, background-color 0.2s ease !important;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1) !important;
+}

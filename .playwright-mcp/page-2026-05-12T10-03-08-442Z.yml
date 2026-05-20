@@ -1,0 +1,22 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: FILMO
+      - generic [ref=e7]:
+        - button "영화" [ref=e8]
+        - button "드라마" [ref=e9]
+      - generic [ref=e10]:
+        - button "찜 목록" [ref=e11]:
+          - img [ref=e12]
+        - button "라이트 모드로 전환" [ref=e14]:
+          - img [ref=e15]
+        - button "로그인" [ref=e21]
+        - button "회원가입" [ref=e22]
+  - main [ref=e23]:
+    - generic [ref=e26]:
+      - button "인기" [ref=e28]:
+        - generic [ref=e29]: 인기
+        - img [ref=e30]
+      - generic [ref=e32]:
+        - img
+        - textbox "제목, 줄거리로 검색..." [ref=e33]
